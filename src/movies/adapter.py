@@ -1,5 +1,8 @@
 import re
 
+from movies.movie_storer_csv import store_movies_csv
+from movies.movie_storer_postgre import store_movies_postgre
+
 #
 # Adapter is used by converting the movies information from the page into variables and into a list that is easy to read and works for our functions.
 #
@@ -34,4 +37,9 @@ def adapt(soup):
                 "link": links[index],
                 "preference_key": index % 4 + 1}
         list.append(data)
-    return list
+    
+    #
+    # we apply SRP from solid by separating both ways of saving the data, that way if one needs to be changed it will not affect the other
+    #
+    store_movies_csv(list)
+    store_movies_postgre(list)

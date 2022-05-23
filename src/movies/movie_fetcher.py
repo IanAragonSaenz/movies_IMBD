@@ -1,5 +1,3 @@
-from movies.movie_storer_csv import store_movies_csv
-from movies.movie_storer_postgre import store_movies_postgre
 from movies.adapter import adapt
 from movies.movie_request import get_movies
 
@@ -12,13 +10,9 @@ from movies.movie_request import get_movies
 def main():
     soup = get_movies()
     # we use an adapter to make readable and usable information for our functions.
-    movies = adapt(soup)
+    adapt(soup)
 
-    #
-    # we apply SRP from solid by separating both ways of saving the data, that way if one needs to be changed it will not affect the other
-    #
-    store_movies_csv(movies)
-    store_movies_postgre(movies)
+    
 
     
 
