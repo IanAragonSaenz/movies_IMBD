@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Movies</h1>
+
+<p>The select element is used to create a drop-down list.</p>
+
+<form action="{{ url_for('movies') }}" method="post">
+  <label for="category1">Categoria 1:</label>
+  <select name="category1" id="category1">
+    <option value="comedy">Comedy</option>
+    <option value="drama">Drama</option>
+    <option value="sci-fi">Sci-Fi</option>
+    <option value="romantic">Romantic</option>
+    <option value="adventure">Adventure</option>
+  </select>
+  <br><br>
+  <label for="category2">Categoria 2:</label>
+  <select name="category2" id="category2">
+    <option value="comedy">Comedy</option>
+    <option value="drama">Drama</option>
+    <option value="sci-fi">Sci-Fi</option>
+    <option value="romantic">Romantic</option>
+    <option value="adventure">Adventure</option>
+  </select>
+  <br><br>
+  <label for="category3">Categoria 3:</label>
+  <select name="category3" id="category3">
+    <option value="comedy">Comedy</option>
+    <option value="drama">Drama</option>
+    <option value="sci-fi">Sci-Fi</option>
+    <option value="romantic">Romantic</option>
+    <option value="adventure">Adventure</option>
+  </select>
+  <br><br>
+  <div>
+    Sort by rating? (descending order)
+    <input type="radio" id="yes" name="rated" value="yes" checked>
+    <label for="yes">Yes</label>
+    <input type="radio" id="no" name="rated" value="no">
+    <label for="no">No</label>
+  </div>
+  <input type="submit" value="Submit">
+
+</form>
+
+<p>Click the "Submit" button and the form-data will be sent to a page on the 
+server called "action_page.php".</p>
+
+</body>
+</html>
