@@ -2,6 +2,8 @@ from flask import Flask, request
 from movies import models
 from flask import render_template
 
+from movies.postgre_fetcher import store_movies_postgre, check_postgre
+
 app = Flask(__name__)
 models.start_mappers()
 
@@ -12,7 +14,7 @@ def hello_world():
 
 @app.route("/", methods=["GET"])
 def home(name=None):
-    
+    check_postgre()
     return render_template('home.html', name=name)
 
 
@@ -28,6 +30,6 @@ def movies(name=None):
 
     preference_key = category1 * category2 * category3 % 5 + 1
 
-    
+    movies = store_movies_postgre(preference_key)
 
     return 'troll' 
