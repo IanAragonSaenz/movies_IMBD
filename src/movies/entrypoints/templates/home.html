@@ -4,9 +4,9 @@
 
 <h1>Movies</h1>
 
-<p>The select element is used to create a drop-down list.</p>
+<p>Selecciona tus categorías preferidas.</p>
 
-<form action="{{ url_for('movies') }}" method="post">
+<form action="/movies" method="post">
   <label for="category1">Categoria 1:</label>
   <select name="category1" id="category1">
     <option value="comedy">Comedy</option>
@@ -35,7 +35,7 @@
   </select>
   <br><br>
   <div>
-    Sort by rating? (descending order)
+    Sort by rating? (ascending order)
     <input type="radio" id="yes" name="rated" value="yes" checked>
     <label for="yes">Yes</label>
     <input type="radio" id="no" name="rated" value="no">
@@ -45,8 +45,7 @@
 
 </form>
 
-<p>Click the "Submit" button and the form-data will be sent to a page on the 
-server called "action_page.php".</p>
+<p>click en submit</p>
 
 </body>
 </html>

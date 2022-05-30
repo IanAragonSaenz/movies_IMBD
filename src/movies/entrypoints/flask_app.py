@@ -1,8 +1,8 @@
 from flask import Flask, request
 from movies import models
 from flask import render_template
-
 from movies.postgre_fetcher import store_movies_postgre, check_postgre
+from movies.entrypoints.facade import ListMovies
 
 app = Flask(__name__)
 models.start_mappers()
@@ -26,10 +26,11 @@ def movies(name=None):
     category2 = category_value[request.form['category2']]
     category3 = category_value[request.form['category3']]
 
-    sorted = request.form['rated']
-
+    is_sorted = request.form['rated']
     preference_key = category1 * category2 * category3 % 5 + 1
+   
+    movies_getter = ListMovies()
 
-    movies = store_movies_postgre(preference_key)
+    movies = movies_getter.get_movies('/src/movie_results.csv', preference_key, is_sorted)
 
-    return 'troll' 
+    return movies

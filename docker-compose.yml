@@ -23,5 +23,7 @@ services:
         POSTGRES_PASSWORD: ${DB_PASS}
         PGPORT: 5432
         PGOPTS: "-i"
+
+        
     ports:
       - "5432:5432"
