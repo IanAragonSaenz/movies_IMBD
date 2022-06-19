@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 import datetime
 
-from movies.models import Movie, get_postgres_uri
+from movies.db.models import Movie, get_postgres_uri
 
 DEFAULT_SESSION_FACTORY = sessionmaker(
     bind=create_engine(

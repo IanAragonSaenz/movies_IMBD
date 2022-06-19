@@ -2,8 +2,8 @@ from sqlalchemy import create_engine, inspect
 from sqlalchemy.orm import scoped_session, sessionmaker
 import datetime
 
-from movies.models import Movie, get_postgres_uri
-from movies.movie_fetcher import movies_chain
+from movies.db.models import Movie, get_postgres_uri
+from .movie_fetcher import movies_chain
 
 DEFAULT_SESSION_FACTORY = sessionmaker(
     bind=create_engine(

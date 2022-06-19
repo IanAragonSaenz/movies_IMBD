@@ -1,10 +1,10 @@
 from flask import Flask, request
-from movies import models
+from movies.db.models import *
 from flask import render_template
 from movies.entrypoints.facade import MoviesFacade
 
 app = Flask(__name__)
-models.start_mappers()
+start_mappers()
 
 
 @app.route("/hello", methods=["GET"])

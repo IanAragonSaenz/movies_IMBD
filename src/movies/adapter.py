@@ -1,7 +1,7 @@
 import re
 
-from movies.movie_storer_csv import store_movies_csv
-from movies.movie_storer_postgre import store_movies_postgre
+from movies.movies_fetch.movie_storer_csv import store_movies_csv
+from movies.movies_fetch.movie_storer_postgre import store_movies_postgre
 
 #
 # Adapter is used by converting the movies information from the page into variables and into a list that is easy to read and works for our functions.

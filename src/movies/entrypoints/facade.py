@@ -1,5 +1,5 @@
-from movies.postgre_fetcher import check_postgre
-from movies.entrypoints.movie_get_csv import get_movies_csv
+from movies.movies_fetch.postgre_fetcher import check_postgre
+from .movie_get_csv import get_movies_csv
 
 
 # This Facade fetches the full list of movies and returns the html code of the 5 movies based on the user preference key

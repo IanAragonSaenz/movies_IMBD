@@ -1,5 +1,5 @@
 from movies.adapter import adapt
-from movies.movie_request import get_movies
+from .movie_request import get_movies
 
 #
 # We apply Interface segregation by dividing all actions into smaller parts that are used form other functions/classes
